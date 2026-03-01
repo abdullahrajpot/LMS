@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-slate-50 text-slate-800 font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer components {
+
+  /* Light Mode Specific Dashboard Panel */
+  .panel {
+    @apply bg-white rounded-xl border border-slate-200 shadow-sm p-6;
+  }
+
+  /* Typography */
+  .section-title {
+    @apply text-xl font-bold text-slate-800 tracking-tight;
+  }
+
+  .section-subtitle {
+    @apply text-sm text-slate-500 font-medium tracking-wide uppercase;
+  }
+
+  /* Inputs */
+  .input-field {
+    @apply w-full bg-slate-50 border border-slate-200 text-slate-800 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:border-orange-500 transition-all font-medium;
+  }
+
+  .input-label {
+    @apply block text-sm font-semibold text-slate-600 mb-1.5;
+  }
+
+  /* Buttons */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 font-semibold rounded-lg px-5 py-2.5 transition-all duration-200 active:scale-95 text-sm;
+  }
+
+  .btn-primary {
+    @apply bg-orange-500 hover:bg-orange-600 text-white shadow-md shadow-orange-500/20;
+  }
+
+  .btn-secondary {
+    @apply bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 hover:border-slate-300 shadow-sm;
+  }
+
+  .btn-danger {
+    @apply bg-red-50 hover:bg-red-100 text-red-600 border border-red-100;
+  }
+
+  /* Badge */
+  .badge {
+    @apply px-2.5 py-1 text-xs font-bold rounded-md;
+  }
+
+  .badge-orange {
+    @apply bg-orange-100 text-orange-600;
+  }
+
+  .badge-green {
+    @apply bg-emerald-100 text-emerald-600;
+  }
+
+  .badge-blue {
+    @apply bg-blue-100 text-blue-600;
+  }
+
+  .badge-gray {
+    @apply bg-slate-100 text-slate-600;
+  }
+}
+
+/* Animations */
+@keyframes slideUpFade {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up {
+  animation: slideUpFade 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Scrollbar styling for a cleaner look */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
