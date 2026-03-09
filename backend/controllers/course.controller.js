@@ -68,8 +68,8 @@ exports.getCourseAnalytics = async (req, res) => {
             return res.status(404).json({ message: 'Course not found' });
         }
 
-        // Must be instructor of the course or admin
-        if (course.instructor.toString() !== req.user._id.toString() && req.user.role !== 'admin') {
+        // Must be instructor of the course
+        if (course.instructor.toString() !== req.user._id.toString()) {
             return res.status(403).json({ message: 'Not authorized for this course' });
         }
 

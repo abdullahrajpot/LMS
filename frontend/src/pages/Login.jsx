@@ -99,7 +99,6 @@ const Login = () => {
                             >
                                 <option value="learner">Learner</option>
                                 <option value="instructor">Instructor</option>
-                                <option value="admin">Admin (Testing Only)</option>
                             </select>
                         </div>
                     )}

@@ -4,8 +4,8 @@ const { protect, authorize } = require('../middleware/auth.middleware');
 
 const router = express.Router();
 
-router.post('/cluster', protect, authorize('admin'), triggerClustering);
-router.get('/clusters', protect, authorize('admin', 'instructor'), getClusters);
+router.post('/cluster', protect, authorize('instructor'), triggerClustering);
+router.get('/clusters', protect, authorize('instructor'), getClusters);
 router.get('/recommendations', protect, getRecommendations);
 
 module.exports = router;

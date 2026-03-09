@@ -5,7 +5,6 @@ import LearnerDashboard from './LearnerDashboard';
 import LearnerTasks from './LearnerTasks';
 import GlobalCourses from './GlobalCourses';
 import InstructorDashboard from './InstructorDashboard';
-import AdminDashboard from './AdminDashboard';
 import Profile from './Profile';
 import Layout from '../components/Layout';
 
@@ -27,7 +26,6 @@ const DashboardRouter = () => {
                     </Route>
                 )}
                 {user.role === 'instructor' && <Route path="/*" element={<InstructorDashboard />} />}
-                {user.role === 'admin' && <Route path="/*" element={<AdminDashboard />} />}
                 {/* Fallback */}
                 <Route path="*" element={<Navigate to={`/dashboard`} />} />
             </Routes>

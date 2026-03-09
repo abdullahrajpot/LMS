@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.route('/')
     .get(protect, getCourses)
-    .post(protect, authorize('instructor', 'admin'), createCourse);
+    .post(protect, authorize('instructor'), createCourse);
 
 router.route('/:id')
     .get(protect, getCourseById);
@@ -15,6 +15,6 @@ router.route('/:id/enroll')
     .post(protect, authorize('learner'), enrollCourse);
 
 router.route('/:id/analytics')
-    .get(protect, authorize('instructor', 'admin'), getCourseAnalytics);
+    .get(protect, authorize('instructor'), getCourseAnalytics);
 
 module.exports = router;

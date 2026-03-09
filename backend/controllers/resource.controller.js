@@ -10,8 +10,8 @@ exports.createResource = async (req, res) => {
             return res.status(404).json({ message: 'Course not found' });
         }
 
-        // Ensure only the instructor of the course or an admin can add resources
-        if (course.instructor.toString() !== req.user._id.toString() && req.user.role !== 'admin') {
+        // Ensure only the instructor of the course can add resources
+        if (course.instructor.toString() !== req.user._id.toString()) {
             return res.status(403).json({ message: 'Not authorized to add resources to this course' });
         }
 
